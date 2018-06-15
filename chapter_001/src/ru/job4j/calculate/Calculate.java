@@ -23,9 +23,9 @@ public class Calculate {
 
 
     /**
-    * Method echo.
-    * @param name Your name.
-    * @return Echo plus your name.
+    * Метод для тестирования.
+    * @param name Строка для вывода в консоль.
+    * @return Константная строка (Echo...) + name .
     */
     public String echo(String name) {
         return "Echo, echo, echo : " + name;
