@@ -1,9 +1,12 @@
 package ru.job4j.calculate;
 
 /**
-*@version 1.0
-*@author Vladimir Kovalenko (skyplane.ru@gmail.com)
-*@since 15.06.2018
+*
+* Calculate.
+*
+* @version $Id$
+* @author Vladimir Kovalenko (mailto:skyplane.ru@gmail.com)
+* @since 0.1
 */
 
 
@@ -11,11 +14,21 @@ package ru.job4j.calculate;
 public class Calculate {
 
 
-	/* Конструктор, вывод строки в консоль.
-	*@param arguments - String[] args
-	*/
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-	}
+    /* Конструктор, вывод строки в консоль.
+    *@param arguments - String[] args
+    */
+    public static void main(String[] args) {
+	System.out.println("Hello World");
+    }
+
+
+    /**
+    * Method echo.
+    * @param name Your name.
+    * @return Echo plus your name.
+    */
+    public String echo(String name) {
+        return "Echo, echo, echo : " + name;
+    }
 
 }
