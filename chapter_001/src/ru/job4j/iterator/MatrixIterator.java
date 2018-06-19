@@ -1,6 +1,7 @@
 package ru.job4j.iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Итератор для работы с матрицей, учитывает элементы {}
@@ -61,7 +62,7 @@ public class MatrixIterator implements Iterator {
                 }
             }
         }
-        return null;
+        throw new NoSuchElementException();
     }
 
 
