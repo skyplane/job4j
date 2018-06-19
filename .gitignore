@@ -10,6 +10,10 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+
+#IntelliJ Idea config
+.idea/
+
 # Package Files #
 *.jar
 *.war
@@ -18,6 +22,9 @@
 *.zip
 *.tar.gz
 *.rar
+
+#IntelliJ Idea files
+*.iml
 
 target
 
