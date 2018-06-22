@@ -71,19 +71,4 @@ public class SimpleArray<T> implements Iterable<T>{
     }
 
 
-    @Override
-    public void forEach(Consumer<? super T> action) {
-            Objects.requireNonNull(action);
-            for (int i=0; i < this.index; i++) {
-                action.accept((T)values[i]);
-            }
-    }
-
-
-    @Override
-    public Spliterator<T> spliterator() {
-        return null;
-    }
-
-
 }

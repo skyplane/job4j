@@ -43,21 +43,6 @@ public class SimpleArrayTest {
         assertThat(sum.get(), is(10));
     }
 
-    @Test
-    public void testForIterator() {
-        Iterator<Integer> it = array.iterator();
-
-        assertThat(it.next(), is(1));
-        assertThat(it.hasNext(), is(true));
-        assertThat(it.next(), is(2));
-        assertThat(it.hasNext(), is(true));
-        assertThat(it.next(), is(3));
-        assertThat(it.hasNext(), is(true));
-        assertThat(it.next(), is(4));
-        assertThat(it.hasNext(), is(false));
-    }
-
-
     @Test(expected = RuntimeException.class)
     public void whenDeleteBiggerIndexShouldReturnException() {
         array.delete(11);
