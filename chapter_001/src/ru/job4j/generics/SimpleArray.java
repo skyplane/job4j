@@ -13,22 +13,31 @@ public class SimpleArray<T> implements Iterable<T>{
     }
 
     public void add(T model){
-        this.values[index++] = model;
+        if (index>=values.length) {
+            throw new RuntimeException("Index is greater than when the array is initialized");
+        }
+        values[index++] = model;
     }
 
     public void set(int position, T model){
-        this.values[position] = model;
+        if (position>=this.index) {
+            throw new RuntimeException("Position is greater than array size");
+        }
+        values[position] = model;
     }
 
-    public void delete(int index){
+    public void delete(int position){
         System.arraycopy(
-                values, index + 1,
-                values, index, this.index - 1 - index);
+                values, position + 1,
+                values, position, this.index - 1 - position);
         this.index--;
     }
 
-    public T get(int index){
-        return (T) values[index];
+    public T get(int position){
+        if (position>=this.index) {
+            throw new RuntimeException("Position is greater than array size");
+        }
+        return (T) values[position];
     }
 
 
@@ -48,16 +57,15 @@ public class SimpleArray<T> implements Iterable<T>{
 
         @Override
         public boolean hasNext() {
-            return cursor <= index;
+            return cursor < index;
         }
 
         @Override
         public Object next() {
-            if (cursor<=index){
-                return values[cursor++];
-            } else {
+            if (!hasNext()){
                 throw new NoSuchElementException();
             }
+            return values[cursor++];
         }
 
     }
