@@ -34,15 +34,6 @@ public class SimpleArrayTest {
         assertThat(array.get(2), is(4));
     }
 
-    @Test
-    public void forEachTest () {
-        AtomicInteger sum = new AtomicInteger(0);
-        array.forEach(item->{
-            sum.addAndGet(item);
-        });
-        assertThat(sum.get(), is(10));
-    }
-
     @Test(expected = RuntimeException.class)
     public void whenDeleteBiggerIndexShouldReturnException() {
         array.delete(11);
