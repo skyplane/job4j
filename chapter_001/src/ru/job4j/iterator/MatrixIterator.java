@@ -17,7 +17,7 @@ public class MatrixIterator implements Iterator {
 
     private final int[][] values;
 
-    private int iindex = 0, jindex = 0;
+    private int row = 0, cell = 0;
 
 
     public MatrixIterator(final int[][] values) {
@@ -26,39 +26,37 @@ public class MatrixIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        if (values.length > iindex) {
-            if (values[iindex].length > jindex) {
+        if (values.length > row)
+            if (values[row].length > cell) {
                 return true;
             } else {
-                for (int i = iindex + 1; i < values.length; i++) {
+                for (int i = row + 1; i < values.length; i++) {
                     if (values[i].length > 0) {
                         return true;
                     }
                 }
-                return false;
             }
-        } else {
-            return false;
-        }
+
+        return false;
     }
 
     @Override
     public Object next() {
-        if (values[iindex].length > jindex) {
-            if (values[iindex].length == jindex + 1) {
-                int res = values[iindex][jindex];
-                iindex++;
-                jindex = 0;
+        if (values[row].length > cell) {
+            if (values[row].length == cell + 1) {
+                int res = values[row][cell];
+                row++;
+                cell = 0;
                 return res;
             } else {
-                return values[iindex][jindex++];
+                return values[row][cell++];
             }
         } else {
-            for (int i = iindex + 1; i < values.length; i++) {
+            for (int i = row + 1; i < values.length; i++) {
                 if (values[i].length > 0) {
-                    iindex = i;
-                    jindex = 0;
-                    return values[iindex][jindex++];
+                    row = i;
+                    cell = 0;
+                    return values[row][cell++];
                 }
             }
         }
