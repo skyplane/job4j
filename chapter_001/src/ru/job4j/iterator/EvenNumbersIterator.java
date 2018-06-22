@@ -37,11 +37,12 @@ public class EvenNumbersIterator implements Iterator {
 
     @Override
     public Object next() {
-        if (hasNext()){
-            return values[point++];
+        if (!hasNext()){
+            throw new NoSuchElementException();
         }
 
-        throw new NoSuchElementException();
+        return values[point++];
+
     }
 
 }

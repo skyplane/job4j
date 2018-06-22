@@ -36,29 +36,20 @@ public class Converter {
             public boolean hasNext() {
                 if (currentForHasNext.hasNext()) {
                     return true;
-                } else {
-                    if (it.hasNext()) {
+                } else if (it.hasNext()) {
                         moveCaretToNextElem();
                         return currentForHasNext.hasNext();
-                    } else {
-                        return false;
-                    }
+
                 }
+                return false;
             }
 
             @Override
             public Integer next() {
-                if (currentForHasNext.hasNext()) {
-                    return currentForHasNext.next();
-                } else {
-                    if (it.hasNext()) {
-                        moveCaretToNextElem();
-                        if (currentForHasNext.hasNext()) {
-                            return currentForHasNext.next();
-                        }
-                    }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
                 }
-                throw new NoSuchElementException();
+                return currentForHasNext.next();
             }
         };
     }
