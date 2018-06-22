@@ -20,15 +20,7 @@ public class Converter {
             Iterator<Integer> currentForHasNext;
 
             {
-                if (it.hasNext())
-                    moveCaretToNextElem();
-            }
-
-
-            private void moveCaretToNextElem() {
-                do {
-                    currentForHasNext = it.next();
-                } while (!currentForHasNext.hasNext() && it.hasNext());
+                it.hasNext();
             }
 
 
@@ -37,9 +29,10 @@ public class Converter {
                 if (currentForHasNext.hasNext()) {
                     return true;
                 } else if (it.hasNext()) {
-                        moveCaretToNextElem();
-                        return currentForHasNext.hasNext();
-
+                    do {
+                        currentForHasNext = it.next();
+                    } while (!currentForHasNext.hasNext() && it.hasNext());
+                    return currentForHasNext.hasNext();
                 }
                 return false;
             }
