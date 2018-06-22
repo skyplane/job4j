@@ -58,7 +58,7 @@ public class MatrixIteratorTest {
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void shoulThrowNoSuchElementException () {
+    public void shouldThrowNoSuchElementException () {
         it = new MatrixIterator(new int[][]{});
         it.next();
     }

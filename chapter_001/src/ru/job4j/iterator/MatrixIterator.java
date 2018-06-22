@@ -30,11 +30,9 @@ public class MatrixIterator implements Iterator {
             if (values[row].length > cell) {
                 return true;
             } else {
-                for (int i = row + 1; i < values.length; i++) {
-                    if (values[i].length > 0) {
+                for (int i = row + 1; i < values.length; i++)
+                    if (values[i].length > 0)
                         return true;
-                    }
-                }
             }
 
         return false;
@@ -42,24 +40,26 @@ public class MatrixIterator implements Iterator {
 
     @Override
     public Object next() {
-        if (values[row].length > cell) {
-            if (values[row].length == cell + 1) {
-                int res = values[row][cell];
-                row++;
-                cell = 0;
-                return res;
-            } else {
-                return values[row][cell++];
-            }
-        } else {
-            for (int i = row + 1; i < values.length; i++) {
-                if (values[i].length > 0) {
-                    row = i;
+        if (values.length > row)
+            if (values[row].length > cell) {
+                if (values[row].length == cell + 1) {
+                    int res = values[row][cell];
+                    row++;
                     cell = 0;
+                    return res;
+                } else {
                     return values[row][cell++];
                 }
+            } else {
+                for (int i = row + 1; i < values.length; i++) {
+                    if (values[i].length > 0) {
+                        row = i;
+                        cell = 0;
+                        return values[row][cell++];
+                    }
+                }
             }
-        }
+
         throw new NoSuchElementException();
     }
 
