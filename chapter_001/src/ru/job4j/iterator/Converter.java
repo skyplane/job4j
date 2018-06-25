@@ -17,24 +17,20 @@ public class Converter {
 
         return new Iterator<Integer>() {
 
-            Iterator<Integer> currentForHasNext;
+            Iterator<Integer> subiterator;
 
             {
-                it.hasNext();
+                if (it.hasNext()) {
+                    subiterator = it.next();
+                }
             }
-
 
             @Override
             public boolean hasNext() {
-                if (currentForHasNext.hasNext()) {
-                    return true;
-                } else if (it.hasNext()) {
-                    do {
-                        currentForHasNext = it.next();
-                    } while (!currentForHasNext.hasNext() && it.hasNext());
-                    return currentForHasNext.hasNext();
+                while (!subiterator.hasNext() && it.hasNext()) {
+                    subiterator = it.next();
                 }
-                return false;
+                return subiterator.hasNext();
             }
 
             @Override
@@ -42,7 +38,7 @@ public class Converter {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                return currentForHasNext.next();
+                return subiterator.next();
             }
         };
     }
