@@ -8,18 +8,12 @@ package ru.job4j.generics;
 public abstract class Base {
     private final String id;
 
-    String className = "Base";
-
     protected Base(final String id) {
         this.id = id;
     }
 
     public String getId() {
         return id;
-    }
-
-    public String getClassName(){
-        return className;
     }
 
 }

@@ -27,11 +27,6 @@ public class StoreTest {
         userStore.delete("2");
     }
 
-    @Test(expected = RuntimeException.class)
-    public void shouldExceptionWithAnotherModel() {
-        Role role = new Role("1");
-        userStore.add(role);
-    }
 
 
 }

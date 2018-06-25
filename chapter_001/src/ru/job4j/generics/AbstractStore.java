@@ -1,16 +1,19 @@
 package ru.job4j.generics;
 
-/** Хранилище (абстрактный), в нем вся логика
+/**
+ * Хранилище (абстрактный), в нем вся логика
+ *
  * @author Vladimir Kovalenko (mailto:skyplane.ru@gmail.com)
  * @version $Id$
  * @since 0.1
  */
 
 
-
 public abstract class AbstractStore<T extends Base> implements Store<T> {
 
-    int getIndexById(SimpleArray<T> store, String id) {
+    SimpleArray<T> store;
+
+    private int getIndexById(SimpleArray<T> store, String id) {
         for (int i = 0; i < store.size(); i++) {
             if ((store.get(i)).getId().equals(id)) {
                 return i;
@@ -19,35 +22,33 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
         return -1;
     }
 
+    @Override
+    public void add(T model) {
+        store.add(model);
+    }
 
-    boolean replace(SimpleArray<T> store, String id, T model) {
+    @Override
+    public boolean replace(String id, T model) {
         int index = getIndexById(store, id);
-        if (index == -1) {
-            return false;
-        } else {
+        if (index >= 0) {
             store.set(index, model);
-            return true;
         }
+        return index >= 0;
     }
 
-    boolean delete(SimpleArray<T> store, String id) {
+    @Override
+    public boolean delete(String id) {
         int index = getIndexById(store, id);
-        if (index == -1) {
-            return false;
-        } else {
+        if (index >= 0) {
             store.delete(index);
-            return true;
         }
+        return index >=0;
     }
 
-
-    Base findById(SimpleArray<T> store, String id) {
+    @Override
+    public T findById(String id) {
         int index = getIndexById(store, id);
-        if (index == -1) {
-            return null;
-        } else {
-            return store.get(index);
-        }
+        return index >= 0 ? store.get(index) : null;
     }
 
 
