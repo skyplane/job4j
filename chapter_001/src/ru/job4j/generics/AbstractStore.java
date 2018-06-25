@@ -11,7 +11,7 @@ package ru.job4j.generics;
 
 public abstract class AbstractStore<T extends Base> implements Store<T> {
 
-    SimpleArray<T> store;
+    private SimpleArray<T> store = new SimpleArray<>(10);
 
     private int getIndexById(SimpleArray<T> store, String id) {
         for (int i = 0; i < store.size(); i++) {
