@@ -84,4 +84,8 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
 
     }
 
+    public int size(){
+        return size;
+    }
+
 }
