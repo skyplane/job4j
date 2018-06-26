@@ -12,13 +12,12 @@ public class SimpleContainerImpl<E> implements SimpleContainer<E> {
 
     private static final int START_ARRAY_SIZE = 5;
 
-    Object[] container;
+    private Object[] container;
 
-    //int index = 0;
-    int modCount = 0;
+    private int modCount = 0;
 
-    int size = 0;
-    int containerSize = START_ARRAY_SIZE;
+    private int size = 0;
+    private int containerSize = START_ARRAY_SIZE;
 
     public SimpleContainerImpl() {
         container = new Object[START_ARRAY_SIZE];
