@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
- * TODO: add comment
+ * Тест для функции определения цикличности списка
  *
  * @author Vladimir Kovalenko (mailto:skyplane.ru@gmail.com)
  * @version $
