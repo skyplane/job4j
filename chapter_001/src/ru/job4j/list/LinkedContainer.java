@@ -38,6 +38,8 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
 
     }
 
+
+
     @Override
     public Iterator<E> iterator() {
         return new LinkedContainerIterator();
