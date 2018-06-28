@@ -3,7 +3,7 @@ package ru.job4j.list;
 public class SimpleQueue <T> extends LinkedContainer<T>{
 
     public T poll(){
-        return this.get(this.size()-1);
+        return this.remove(this.size()-1);
     }
 
     public void push(T value){

@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * @since 0.1
  */
 
-public class LinkedContainer<E> implements SimpleContainer<E>{
+public class LinkedContainer<E> implements SimpleContainer<E> {
 
     private int modCount = 0;
     private int size = 0;
@@ -39,6 +39,26 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
     }
 
 
+    public E remove(int position) {
+        E result = null;
+
+        if (first != null)
+            if (position == 0) {
+                result = first.data;
+                first = first.next;
+            } else {
+                Node n = first;
+                for (int i = 0; i < position - 1; i++) {
+                    n = n.next;
+                }
+                result = (E) n.next.data;
+                n.next = n.next.next;
+            }
+
+        return result;
+    }
+
+
 
     @Override
     public Iterator<E> iterator() {
@@ -57,7 +77,7 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
             if (modCount != expectedModCount) {
                 throw new ConcurrentModificationException();
             }
-            return cursor!=null;
+            return cursor != null;
         }
 
         @Override
@@ -68,7 +88,7 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
             expectedModCount++;
             modCount++;
             E res = cursor.data;
-            cursor=cursor.next;
+            cursor = cursor.next;
             return res;
         }
 
@@ -86,7 +106,7 @@ public class LinkedContainer<E> implements SimpleContainer<E>{
 
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
