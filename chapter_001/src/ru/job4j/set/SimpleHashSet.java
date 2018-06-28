@@ -37,17 +37,17 @@ public class SimpleHashSet<T> {
             int x1, x2;
             int a = 0;
             int b = size() - 1;
-            if (hash > values[size() - 1].getKey())
+            if (hash > values[size() - 1].getKey()) {
                 result = size();
-            else
+            } else {
                 while (true) {
                     x1 = (int) Math.round(values[b].getKey() - (values[b].getKey() - values[a].getKey()) / PHI);
                     x2 = (int) Math.round(values[a].getKey() + (values[b].getKey() - values[a].getKey()) / PHI);
-                    if (Math.abs(x1 - hash) > Math.abs(x2 - hash))
+                    if (Math.abs(x1 - hash) > Math.abs(x2 - hash)) {
                         a = (int) Math.round(b - (b - a) / PHI);
-                    else
+                    } else {
                         b = (int) Math.round(a + (b - a) / PHI);
-                    ;
+                    }
                     if (Math.abs(b - a) < 2) {
                         if (values[a].getKey().equals(hash)) {
                             result = exist ? a : -1;
@@ -61,6 +61,7 @@ public class SimpleHashSet<T> {
                         break;
                     }
                 }
+            }
         }
         return result;
     }
@@ -80,14 +81,16 @@ public class SimpleHashSet<T> {
                 values = Arrays.copyOf(values, containerSize);
             }
 
-            if (position < index)
+            if (position < index) {
                 System.arraycopy(
                         values, position,
                         values, position + 1, this.index - position);
-            if (size() > 0)
+            }
+            if (size() > 0) {
                 values[position] = new Pair<>(model.hashCode(), model);
-            else
+            }else {
                 values[position] = new Pair<>(model.hashCode(), model);
+            }
             index++;
         }
         return position >= 0;
