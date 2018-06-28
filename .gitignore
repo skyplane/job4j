@@ -14,6 +14,9 @@
 #IntelliJ Idea config
 .idea/
 
+#Travis config
+.travis.yml
+
 # Package Files #
 *.jar
 *.war

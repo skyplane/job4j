@@ -12,6 +12,17 @@ public class SimpleArray<T> implements Iterable<T>{
         this.values = new Object[size];
     }
 
+    public boolean contains(T model){
+        boolean has = false;
+        for (int i = 0; i < size(); i++) {
+            if (model.equals(get(i))) {
+                has = true;
+            }
+        }
+        return has;
+    }
+
+
     public void add(T model){
         if (index>=values.length) {
             throw new RuntimeException("Index is greater than when the array is initialized");

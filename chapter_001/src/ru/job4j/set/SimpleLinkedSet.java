@@ -17,16 +17,7 @@ public class SimpleLinkedSet<E> extends LinkedContainer<E>{
 
     @Override
     public void add(E model){
-        Iterator<E> it = iterator();
-        boolean has = false;
-        while (it.hasNext()){
-            E item = it.next();
-            if ((model==null&& item==null) || (model.equals(item))) {
-                has = true;
-            }
-        }
-
-        if (!has){
+        if (!contains(model)){
             super.add(model);
         }
     }

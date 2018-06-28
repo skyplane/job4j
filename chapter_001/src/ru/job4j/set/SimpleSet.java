@@ -20,14 +20,8 @@ public class SimpleSet<T> extends SimpleArray<T> {
 
 
     @Override
-    public void add(T model){
-        boolean has = false;
-        for (int i=0; i<size(); i++){
-            if ((model==null&& get(i)==null) || (model.equals(get(i)))) {
-                has = true;
-            }
-        }
-        if (!has){
+    public void add(T model) {
+        if (!contains(model)) {
             super.add(model);
         }
     }

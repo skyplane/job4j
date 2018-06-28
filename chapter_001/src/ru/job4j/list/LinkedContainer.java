@@ -19,6 +19,21 @@ public class LinkedContainer<E> implements SimpleContainer<E> {
 
     private Node<E> first;
 
+
+    public boolean contains(E model){
+        Iterator<E> it = iterator();
+        boolean has = false;
+        while (it.hasNext()){
+            E item = it.next();
+            if (model.equals(item)) {
+                has = true;
+            }
+        }
+        return has;
+    }
+
+
+
     @Override
     public void add(E data) {
         Node<E> newLink = new Node<>(data);
