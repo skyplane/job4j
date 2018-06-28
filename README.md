@@ -1,5 +1,9 @@
-Репозиторий Владимира Коваленко
-Пройти обучение уровня Junior
+[![Build Status](https://travis-ci.org/skyplane/job4j.svg?branch=master)](https://travis-ci.org/skyplane/job4j)
+[![codecov](https://codecov.io/gh/skyplane/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/skyplane/job4j)
 
-закончить 15.08.2018
+
+#Репозиторий Владимира Коваленко
+#Пройти обучение уровня Junior
+
+#закончить 15.08.2018
 
