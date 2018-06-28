@@ -55,17 +55,19 @@ public class HasCycleTest {
 */
 
     boolean hasCycle(Node first) {
-        if (first == null)
-            return false;
         Node slow, fast;
         slow = fast = first;
+        boolean result = false;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast)
-                return true;
+            if (slow == fast){
+                result = true;
+                break;
+            }
+
         }
-        return false;
+        return result;
     }
 
 
