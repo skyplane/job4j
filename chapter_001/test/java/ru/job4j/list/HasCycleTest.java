@@ -41,25 +41,27 @@ public class HasCycleTest {
     class Node<T> {
         T value;
         Node<T> next;
-
         public Node(T value) {
             this.value = value;
         }
     }
 
+
+
+/*
+    Метод, определяющий нахождение цикла в цепочке,
+    Стартуют две ноды, медленная и быстрая, если они совпадут - значит имеем цикл
+*/
+
     boolean hasCycle(Node first) {
-        if (first == null) // Список отсутствует
+        if (first == null)
             return false;
-
-        Node slow, fast; // создаем две ссылки, догоняющую и опережающую
-
-        slow = fast = first; // обе стартуют с начала списка
-
+        Node slow, fast;
+        slow = fast = first;
         while (fast != null && fast.next != null) {
-            slow = slow.next;           // 1 шаг
-            fast = fast.next.next;      // 2 шага
-
-            if (slow == fast) // Если догоняющий совпадает с опережающей, то у нас петля
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
                 return true;
         }
         return false;
