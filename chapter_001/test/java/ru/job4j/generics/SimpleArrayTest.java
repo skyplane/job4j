@@ -16,7 +16,7 @@ public class SimpleArrayTest {
     SimpleArray<Integer> array;
 
     @Before
-    public void setUp(){
+    public void setUp() {
 
         array = new SimpleArray<>(10);
         array.add(1);
@@ -26,8 +26,8 @@ public class SimpleArrayTest {
     }
 
     @Test
-    public void testForBasicOperations () {
-        array.set(1,5);
+    public void testForBasicOperations() {
+        array.set(1, 5);
         array.delete(2);
         assertThat(array.size(), is(3));
         assertThat(array.get(1), is(5));
@@ -40,12 +40,12 @@ public class SimpleArrayTest {
     }
 
     @Test(expected = RuntimeException.class)
-    public void whenSetBiggerIndexShouldReturnException () {
+    public void whenSetBiggerIndexShouldReturnException() {
         array.set(11, 12);
     }
 
     @Test(expected = RuntimeException.class)
-    public void whenAddTooManyElementsShouldReturnException () {
+    public void whenAddTooManyElementsShouldReturnException() {
         array.add(1);
         array.add(1);
         array.add(1);

@@ -2,8 +2,8 @@
 [![codecov](https://codecov.io/gh/skyplane/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/skyplane/job4j)
 
 
-#Репозиторий Владимира Коваленко
-#Пройти обучение уровня Junior
+Репозиторий Владимира Коваленко
+Пройти обучение уровня Junior
 
-#закончить 15.08.2018
+закончить 15.08.2018
 

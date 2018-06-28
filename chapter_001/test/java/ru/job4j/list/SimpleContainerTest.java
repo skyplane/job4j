@@ -13,7 +13,6 @@ import static org.hamcrest.Matchers.is;
 public class SimpleContainerTest {
 
 
-
     private SimpleContainer<Integer> container;
 
     @Before
@@ -28,7 +27,7 @@ public class SimpleContainerTest {
     }
 
     @Test
-    public void hasNextNextSequentialInvocation () {
+    public void hasNextNextSequentialInvocation() {
         Iterator it = container.iterator();
         assertThat(it.hasNext(), is(true));
         assertThat(it.next(), is(1));

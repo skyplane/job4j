@@ -26,21 +26,21 @@ public class MatrixIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return values.length> row && values[row].length > cell;
+        return values.length > row && values[row].length > cell;
     }
 
     @Override
     public Object next() {
-        if (!hasNext()){
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
 
         int result;
-        if (values[row].length-1 > cell) {
+        if (values[row].length - 1 > cell) {
             result = values[row][cell++];
         } else {
             result = values[row++][cell];
-            cell=0;
+            cell = 0;
         }
 
         return result;

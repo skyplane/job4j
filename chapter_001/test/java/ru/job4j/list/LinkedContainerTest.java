@@ -25,7 +25,7 @@ public class LinkedContainerTest {
     }
 
     @Test
-    public void hasNextNextSequentialInvocation () {
+    public void hasNextNextSequentialInvocation() {
         Iterator it = container.iterator();
         assertThat(it.hasNext(), is(true));
         assertThat(it.next(), is(6));

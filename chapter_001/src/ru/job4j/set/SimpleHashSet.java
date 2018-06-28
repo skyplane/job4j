@@ -1,11 +1,8 @@
 package ru.job4j.set;
 
 import javafx.util.Pair;
-import ru.job4j.generics.SimpleArray;
 
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * Простая реализация хеш-таблицы
@@ -29,7 +26,7 @@ public class SimpleHashSet<T> {
     }
 
 
-    private final double PHI = (1 + Math.sqrt(5)) / 2;
+    private static final double PHI = (1 + Math.sqrt(5)) / 2;
 
     private int findNearestIndexWithExistCheck(int hash, boolean exist) {
         int result = 0;
@@ -88,7 +85,7 @@ public class SimpleHashSet<T> {
             }
             if (size() > 0) {
                 values[position] = new Pair<>(model.hashCode(), model);
-            }else {
+            } else {
                 values[position] = new Pair<>(model.hashCode(), model);
             }
             index++;

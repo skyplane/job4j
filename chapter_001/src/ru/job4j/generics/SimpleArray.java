@@ -3,7 +3,7 @@ package ru.job4j.generics;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class SimpleArray<T> implements Iterable<T>{
+public class SimpleArray<T> implements Iterable<T> {
 
     private Object[] values;
     private int index = 0;
@@ -12,7 +12,7 @@ public class SimpleArray<T> implements Iterable<T>{
         this.values = new Object[size];
     }
 
-    public boolean contains(T model){
+    public boolean contains(T model) {
         boolean has = false;
         for (int i = 0; i < size(); i++) {
             if (model.equals(get(i))) {
@@ -23,36 +23,36 @@ public class SimpleArray<T> implements Iterable<T>{
     }
 
 
-    public void add(T model){
-        if (index>=values.length) {
+    public void add(T model) {
+        if (index >= values.length) {
             throw new RuntimeException("Index is greater than when the array is initialized");
         }
         values[index++] = model;
     }
 
-    public void set(int position, T model){
-        if (position>=this.index) {
+    public void set(int position, T model) {
+        if (position >= this.index) {
             throw new RuntimeException("Position is greater than array size");
         }
         values[position] = model;
     }
 
-    public void delete(int position){
+    public void delete(int position) {
         System.arraycopy(
                 values, position + 1,
                 values, position, this.index - 1 - position);
         this.index--;
     }
 
-    public T get(int position){
-        if (position>=this.index) {
+    public T get(int position) {
+        if (position >= this.index) {
             throw new RuntimeException("Position is greater than array size");
         }
         return (T) values[position];
     }
 
 
-    public int size(){
+    public int size() {
         return this.index;
     }
 
@@ -73,7 +73,7 @@ public class SimpleArray<T> implements Iterable<T>{
 
         @Override
         public Object next() {
-            if (!hasNext()){
+            if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             return values[cursor++];

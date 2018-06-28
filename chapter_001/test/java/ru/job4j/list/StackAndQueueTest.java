@@ -33,7 +33,7 @@ public class StackAndQueueTest {
     }
 
     @Test
-    public void shouldStackGetLastElemAndQueueGetFirst () {
+    public void shouldStackGetLastElemAndQueueGetFirst() {
         assertThat(stack.poll(), is(2));
         assertThat(queue.poll(), is(1));
     }

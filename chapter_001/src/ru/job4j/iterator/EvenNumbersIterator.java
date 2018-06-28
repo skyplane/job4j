@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
  */
 
 
-
 public class EvenNumbersIterator implements Iterator {
 
     private final int[] values;
@@ -37,7 +36,7 @@ public class EvenNumbersIterator implements Iterator {
 
     @Override
     public Object next() {
-        if (!hasNext()){
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
 

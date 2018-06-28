@@ -12,12 +12,12 @@ import java.util.Iterator;
  * @since 0.1
  */
 
-public class SimpleLinkedSet<E> extends LinkedContainer<E>{
+public class SimpleLinkedSet<E> extends LinkedContainer<E> {
 
 
     @Override
-    public void add(E model){
-        if (!contains(model)){
+    public void add(E model) {
+        if (!contains(model)) {
             super.add(model);
         }
     }

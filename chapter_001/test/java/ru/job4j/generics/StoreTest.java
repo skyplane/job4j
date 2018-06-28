@@ -13,12 +13,12 @@ public class StoreTest {
     UserStore userStore;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         userStore = new UserStore();
     }
 
     @Test
-    public void testForBasicOperations () {
+    public void testForBasicOperations() {
         User user1 = new User("1");
         User user2 = new User("2");
         userStore.add(user1);
@@ -26,7 +26,6 @@ public class StoreTest {
         assertThat(userStore.findById("2"), is(user2));
         userStore.delete("2");
     }
-
 
 
 }

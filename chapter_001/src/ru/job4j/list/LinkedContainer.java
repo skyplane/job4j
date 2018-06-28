@@ -20,10 +20,10 @@ public class LinkedContainer<E> implements SimpleContainer<E> {
     private Node<E> first;
 
 
-    public boolean contains(E model){
+    public boolean contains(E model) {
         Iterator<E> it = iterator();
         boolean has = false;
-        while (it.hasNext()){
+        while (it.hasNext()) {
             E item = it.next();
             if (model.equals(item)) {
                 has = true;
@@ -31,7 +31,6 @@ public class LinkedContainer<E> implements SimpleContainer<E> {
         }
         return has;
     }
-
 
 
     @Override
@@ -57,7 +56,7 @@ public class LinkedContainer<E> implements SimpleContainer<E> {
     public E remove(int position) {
         E result = null;
 
-        if (first != null)
+        if (first != null) {
             if (position == 0) {
                 result = first.data;
                 first = first.next;
@@ -69,10 +68,9 @@ public class LinkedContainer<E> implements SimpleContainer<E> {
                 result = (E) n.next.data;
                 n.next = n.next.next;
             }
-
+        }
         return result;
     }
-
 
 
     @Override

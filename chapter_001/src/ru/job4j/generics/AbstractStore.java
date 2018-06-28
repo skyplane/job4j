@@ -42,7 +42,7 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
         if (index >= 0) {
             store.delete(index);
         }
-        return index >=0;
+        return index >= 0;
     }
 
     @Override
