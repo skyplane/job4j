@@ -22,6 +22,7 @@ public class SimpleSetTest {
 
 
     private SimpleSet<Integer> set;
+    private SimpleLinkedSet<Integer> linkedSet;
 
     @Before
     public void beforeTest() {
@@ -29,12 +30,25 @@ public class SimpleSetTest {
         set.add(1);
         set.add(2);
         set.add(1);
+        linkedSet = new SimpleLinkedSet();
+        linkedSet.add(1);
+        linkedSet.add(2);
+        linkedSet.add(1);
     }
 
     @Test
     public void shouldSetExistTwoElements() {
         assertThat(set.size(), is(2));
         Iterator<Integer> it = set.iterator();
+        it.next();
+        it.next();
+        assertThat(it.hasNext(), is(false));
+    }
+
+    @Test
+    public void shouldLinkedSetExistTwoElements() {
+        assertThat(linkedSet.size(), is(2));
+        Iterator<Integer> it = linkedSet.iterator();
         it.next();
         it.next();
         assertThat(it.hasNext(), is(false));
