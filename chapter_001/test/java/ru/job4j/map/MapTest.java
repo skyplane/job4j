@@ -29,6 +29,11 @@ public class MapTest {
         map.put(user1, "first");
         map.put(user2, "second");
 
+        map.get(user1);
+        map.get(user2);
+
+        System.out.println(map.get(user1));
+        System.out.println(map.get(user2));
         System.out.println(map);
 
 
