@@ -20,14 +20,14 @@ public class MapTest {
 
     @Ignore
     @Test
-    public void testForMap(){
-        User user1 = new User("name", 1, new GregorianCalendar(1,1,1));
-        User user2 = new User("name", 1, new GregorianCalendar(1,1,1));
+    public void testForMap() {
+        User user1 = new User("name", 1, new GregorianCalendar(1, 1, 1));
+        User user2 = new User("name", 1, new GregorianCalendar(1, 1, 1));
 
         Map<User, Object> map = new HashMap<>();
 
-        map.put(user1,"first");
-        map.put(user2,"second");
+        map.put(user1, "first");
+        map.put(user2, "second");
 
         System.out.println(map);
 
