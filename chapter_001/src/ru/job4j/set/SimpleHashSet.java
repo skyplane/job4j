@@ -29,7 +29,7 @@ public class SimpleHashSet<T> {
             containerSize = containerSize * 2;
             Object[] newContainer = new Object[containerSize];
             for (int i = 0; i <= index; i++) {
-                if (values[i]!=null) {
+                if (values[i] != null) {
                     int position = values[i].hashCode() & (containerSize - 1);
                     newContainer[position] = values[i];
                 }
@@ -39,7 +39,7 @@ public class SimpleHashSet<T> {
         int position = model.hashCode() & (containerSize - 1);
         boolean res = false;
 
-        if (!model.equals(values[position])){
+        if (!model.equals(values[position])) {
             res = true;
             values[position] = model;
             index++;
@@ -50,7 +50,7 @@ public class SimpleHashSet<T> {
 
     public boolean contains(T model) {
         int position = model.hashCode() & (containerSize - 1);
-        return values[position]!=null;
+        return values[position] != null;
     }
 
     public boolean remove(T model) {

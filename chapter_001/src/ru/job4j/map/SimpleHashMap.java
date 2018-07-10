@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
  * @since 0.1
  */
 
-public class SimpleHashMap <E, T> implements Iterable {
+public class SimpleHashMap<E, T> implements Iterable {
 
 
     private int modCount = 0;
@@ -34,7 +34,7 @@ public class SimpleHashMap <E, T> implements Iterable {
             containerSize = containerSize * 2;
             Pair<E, T>[] newContainer = new Pair[containerSize];
             for (int i = 0; i <= index; i++) {
-                if (values[i]!=null) {
+                if (values[i] != null) {
                     int position = values[i].getKey().hashCode() & (containerSize - 1);
                     newContainer[position] = values[i];
                 }
@@ -44,9 +44,9 @@ public class SimpleHashMap <E, T> implements Iterable {
         int position = key.hashCode() & (containerSize - 1);
         boolean res = false;
 
-        if (values[position]==null){
+        if (values[position] == null) {
             res = true;
-            values[position] = new Pair(key,value);
+            values[position] = new Pair(key, value);
             index++;
             modCount++;
         }
@@ -57,7 +57,7 @@ public class SimpleHashMap <E, T> implements Iterable {
     public boolean delete(E key) {
         int position = key.hashCode() & (containerSize - 1);
         boolean res = values[position] != null && values[position].getKey().equals(key);
-        if (res){
+        if (res) {
             values[position] = null;
             index--;
             modCount--;
@@ -80,7 +80,6 @@ public class SimpleHashMap <E, T> implements Iterable {
     }
 
 
-
     @Override
     public Iterator<E> iterator() {
         return new SimpleHashMapIterator();
@@ -98,11 +97,11 @@ public class SimpleHashMap <E, T> implements Iterable {
             if (modCount != expectedModCount) {
                 throw new ConcurrentModificationException();
             }
-            while (indexOfIterator<containerSize-1 && values[indexOfIterator]==null) {
+            while (indexOfIterator < containerSize - 1 && values[indexOfIterator] == null) {
                 indexOfIterator++;
             }
-            return indexOfIterator<=containerSize-1
-                    ?values[indexOfIterator]!=null:false;
+            return indexOfIterator <= containerSize - 1
+                    ? values[indexOfIterator] != null : false;
         }
 
         @Override

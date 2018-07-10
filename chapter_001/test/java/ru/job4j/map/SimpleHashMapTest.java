@@ -22,9 +22,8 @@ import static org.hamcrest.Matchers.is;
 
 public class SimpleHashMapTest {
 
-    @Ignore
     @Test
-    public void testForMap() {
+    public void testForSimpleHashMap() {
         SimpleHashMap<String, Integer> map = new SimpleHashMap<String, Integer>(3);
 
         Assert.assertTrue(map.insert("first", 1));
