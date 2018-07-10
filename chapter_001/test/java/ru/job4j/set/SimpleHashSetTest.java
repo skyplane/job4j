@@ -36,10 +36,10 @@ public class SimpleHashSetTest {
         assertThat(set.add(4), is(true));
         assertThat(set.add(5), is(true));
         assertThat(set.add(7), is(true));
-        assertThat(set.remove(2), is(true));
+        assertThat(set.remove(7), is(true));
         assertThat(set.add(6), is(true));
-        assertThat(set.contains(3), is(true));
-        assertThat(set.contains(2), is(false));
+        assertThat(set.contains(6), is(true));
+        assertThat(set.contains(7), is(false));
     }
 
 
