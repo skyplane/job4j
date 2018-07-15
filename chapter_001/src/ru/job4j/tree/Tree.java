@@ -49,12 +49,26 @@ public class Tree<E extends Comparable> implements SimpleTree<E> {
         return rsl;
     }
 
+    public boolean isBinary() {
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(root);
+        boolean res = true;
+        while (nodes.size() > 0) {
+            Node current = nodes.remove();
+            List<Node> leaves = current.leaves();
+            if (leaves.size() > 2) {
+                res = false;
+                break;
+            }
+            nodes.addAll(leaves);
+        }
+        return res;
+    }
 
     @Override
     public Iterator<E> iterator() {
         return new TreeIterator();
     }
-
 
     private class TreeIterator implements Iterator<E> {
 
