@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Node<E extends Comparable<E>> {
     private final List<Node<E>> children = new ArrayList<>();
     private final E value;
@@ -27,7 +26,7 @@ public class Node<E extends Comparable<E>> {
 
     }
 
-    public E getValue(){
+    public E getValue() {
         return value;
     }
 
